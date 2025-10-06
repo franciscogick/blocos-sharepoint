@@ -1,143 +1,154 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-  <meta charset="UTF-8" />
-  <title>Bloco de Código - SharePoint</title>
-  <style>
-    body {
-      background: #fff;
-      color: #999;
-      font-family: "JetBrains Mono", Consolas, monospace;
-      padding: 1rem;
-      margin: 0;
-    }
+    <meta charset="UTF-8" />
+    <title>Bloco de Código - SharePoint</title>
+    <style>
+        body {
+            background: #fff;
+            color: #999;
+            font-family: "JetBrains Mono", Consolas, monospace;
+            padding: 1rem;
+            margin: 0;
+        }
+        
+        .code-block {
+            position: relative;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background: #f9f9f9;
+            padding: 1rem;
+            overflow: hidden;
+            height: 150px; 
+        }
 
-    .code-block {
-      position: relative;
-      border: 1px solid #30363d;
-      border-radius: 6px;
-      background: #f9f9f9;
-      padding: 1rem;
-      overflow: hidden;
-      height: 150px;
-    }
-
-    pre {
-      margin: 0;
-      white-space: pre-wrap;
-      word-break: break-word;
-    }
-
-    button.copy-btn {
-      position: absolute;
-      top: 8px;
-      right: 8px;
-      background: #238636;
-      color: #fff;
-      border: none;
-      border-radius: 4px;
-      padding: 6px 10px;
-      font-size: 12px;
-      cursor: pointer;
-      transition: background 0.2s ease;
-    }
-
-    button.copy-btn:hover {
-      background: #2ea043;
-    }
-
-    .copied {
-      background: #30363d !important;
-    }
-
-    .toast {
-      position: fixed;
-      bottom: 10px;
-      right: 10px;
-      background: #238636;
-      color: white;
-      padding: 10px 16px;
-      border-radius: 6px;
-      opacity: 0;
-      transition: opacity 0.3s ease;
-      font-size: 14px;
-    }
-
-    .toast.show {
-      opacity: 1;
-    }
-  </style>
+        .label {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            color: black;
+        }
+        
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        
+        button.copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #238636;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 10px;
+            font-size: 12px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        button.copy-btn:hover {
+            background: #2ea043;
+        }
+        
+        .copied {
+            background: #30363d !important;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #238636;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
 </head>
 <body>
-  <div class="label">Aviso de formação de grupos</div>
-  <div class="code-block">
-    <pre id="codigo1">
-
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #000000;&quot;&gt;E agora &amp;eacute; a hora de &lt;span style=&quot;background-color: #f1c40f;&quot;&gt;&lt;b&gt;formar os grupos de trabalho&lt;/b&gt;!&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #000000;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b&gt;&lt;br /&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;O PER&amp;Iacute;ODO PARA FORMAR SEU GRUPO&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b style=&quot;font-size: 11pt; font-style: inherit;&quot;&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;&amp;eacute; de &lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;background-color: #b96ad9;&quot;&gt;&lt;b style=&quot;font-size: 11pt; font-style: inherit; background-color: #b96ad9;&quot;&gt;&lt;span style=&quot;font-size: 18pt; background-color: #b96ad9;&quot;&gt;18 a 30/08&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 18pt; color: #000000;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size: 36pt;&quot;&gt;📅&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;Converse com os colegas, forme o seu grupo e informe o seu professor.&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;Acesse no Menu ao lado &lt;strong&gt;&lt;i&gt;&amp;raquo;&lt;/i&gt; &lt;i&gt;F&amp;oacute;rum de Intera&amp;ccedil;&amp;otilde;es&lt;/i&gt; &lt;i&gt;&amp;raquo;&lt;/i&gt;&lt;/strong&gt; &lt;b&gt;&lt;i&gt;F&amp;oacute;rum de Forma&amp;ccedil;&amp;atilde;o de Grupos&lt;/i&gt;&lt;/b&gt; e informe &lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;a composi&amp;ccedil;&amp;atilde;o do seu grupo!&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;background-color: #2dc26b; font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 12pt;&quot;&gt;&amp;nbsp;E n&amp;atilde;o esque&amp;ccedil;a! A composi&amp;ccedil;&amp;atilde;o dos grupos deve ser de 3 a 5 pessoas!&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 12pt;&quot;&gt;&lt;strong&gt;Qualquer d&amp;uacute;vida, entre em contato pelo &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;em&gt;F&amp;oacute;rum Tira D&amp;uacute;vidas&lt;/em&gt;&lt;/span&gt;&lt;em&gt; &lt;/em&gt;ou em &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;em&gt;Fale com o seu professor&lt;/em&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
-      
-      &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+    <div class="code-block">
+        <div class="label">Aviso de formação de grupos</div>
+        <pre id="codigo1">
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #000000;&quot;&gt;E agora &amp;eacute; a hora de &lt;span style=&quot;background-color: #f1c40f;&quot;&gt;&lt;b&gt;formar os grupos de trabalho&lt;/b&gt;!&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; font-size: 14pt; color: #000000;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b&gt;&lt;br /&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;O PER&amp;Iacute;ODO PARA FORMAR SEU GRUPO&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b style=&quot;font-size: 11pt; font-style: inherit;&quot;&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;&amp;eacute; de &lt;/span&gt;&lt;/b&gt;&lt;span style=&quot;background-color: #b96ad9;&quot;&gt;&lt;b style=&quot;font-size: 11pt; font-style: inherit; background-color: #b96ad9;&quot;&gt;&lt;span style=&quot;font-size: 18pt; background-color: #b96ad9;&quot;&gt;18 a 30/08&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;span style=&quot;font-size: 18pt;&quot;&gt;&amp;nbsp;&amp;nbsp;&lt;/span&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-size: 18pt; color: #000000;&quot;&gt;&lt;b&gt;&lt;span style=&quot;font-size: 36pt;&quot;&gt;📅&lt;/span&gt;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&lt;b&gt;&amp;nbsp;&lt;/b&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;Converse com os colegas, forme o seu grupo e informe o seu professor.&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;Acesse no Menu ao lado &lt;strong&gt;&lt;i&gt;&amp;raquo;&lt;/i&gt; &lt;i&gt;F&amp;oacute;rum de Intera&amp;ccedil;&amp;otilde;es&lt;/i&gt; &lt;i&gt;&amp;raquo;&lt;/i&gt;&lt;/strong&gt; &lt;b&gt;&lt;i&gt;F&amp;oacute;rum de Forma&amp;ccedil;&amp;atilde;o de Grupos&lt;/i&gt;&lt;/b&gt; e informe &lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 14pt;&quot;&gt;a composi&amp;ccedil;&amp;atilde;o do seu grupo!&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif;&quot;&gt;&lt;span style=&quot;color: #000000;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;background-color: #2dc26b; font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 12pt;&quot;&gt;&amp;nbsp;E n&amp;atilde;o esque&amp;ccedil;a! A composi&amp;ccedil;&amp;atilde;o dos grupos deve ser de 3 a 5 pessoas!&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;span style=&quot;font-family: 'comic sans ms', sans-serif; color: #000000; font-size: 12pt;&quot;&gt;&lt;strong&gt;Qualquer d&amp;uacute;vida, entre em contato pelo &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;em&gt;F&amp;oacute;rum Tira D&amp;uacute;vidas&lt;/em&gt;&lt;/span&gt;&lt;em&gt; &lt;/em&gt;ou em &lt;span style=&quot;text-decoration: underline;&quot;&gt;&lt;em&gt;Fale com o seu professor&lt;/em&gt;&lt;/span&gt;&lt;/strong&gt;&lt;/span&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+            &lt;p style=&quot;margin: 0cm; font-size: 11pt; font-family: Aptos, sans-serif; text-align: center;&quot;&gt;&lt;/p&gt;
+            
+        </pre>
+        <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
+    </div>
     
-    </pre>
-    <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
-  </div>
-
-  <!--<div id="toast" class="toast">Copiado!</div>-->
-
-  <script>
-    function copiarTexto() {
-      const texto = document.getElementById("codigo1").innerText;
-      const temp = document.createElement("textarea");
-      temp.value = texto;
-      document.body.appendChild(temp);
-      temp.select();
-      document.execCommand("copy");
-      document.body.removeChild(temp);
-
-      const btn = document.querySelector(".copy-btn");
-      //const toast = document.getElementById("toast");
-
-      btn.textContent = "✅ Copiado!";
-      btn.classList.add("copied");
-      //toast.classList.add("show");
-
-      setTimeout(() => {
-        btn.textContent = "Copiar";
-        btn.classList.remove("copied");
-        //toast.classList.remove("show");
-      }, 2000);
-    }
-  </script>
+    <!--<div id="toast" class="toast">Copiado!</div>-->
+    
+    <script>
+        function copiarTexto() {
+            const texto = document.getElementById("codigo1").innerText;
+            const temp = document.createElement("textarea");
+            temp.value = texto;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+            
+            const btn = document.querySelector(".copy-btn");
+            //const toast = document.getElementById("toast");
+            
+            btn.textContent = "✅ Copiado!";
+            btn.classList.add("copied");
+            //toast.classList.add("show");
+            
+            setTimeout(() => {
+                btn.textContent = "Copiar";
+                btn.classList.remove("copied");
+                //toast.classList.remove("show");
+            }, 2000);
+        }
+    </script>
 </body>
 </html>
