@@ -1,0 +1,75 @@
+body {
+    background: #fff;
+    color: #999;
+    font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    padding: 1rem;
+    margin: 0;
+}
+
+.code-block {
+    position: relative;
+    border: 1px solid #30363d;
+    border-radius: 6px;
+    background: #f9f9f9;
+    padding: 1rem;
+    overflow: hidden;
+    height: 150px; 
+    font-family: "JetBrains Mono", Consolas, monospace;
+}
+
+.label {
+    position: absolute;
+    top: 8px;
+    left: 8px;
+    font-size: 10px;
+    text-transform: uppercase;
+    font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    color: black;
+}
+
+pre {
+    margin: 0;
+    white-space: pre-wrap;
+    word-break: break-word;
+}
+
+button.copy-btn {
+    position: absolute;
+    top: 8px;
+    right: 8px;
+    background: #238636;
+    color: #fff;
+    border: none;
+    border-radius: 4px;
+    padding: 6px 10px;
+    font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+    font-size: 12px;
+    line-height: 1;
+    cursor: pointer;
+    transition: background 0.2s ease;
+}
+
+button.copy-btn:hover {
+    background: #2ea043;
+}
+
+.copied {
+    background: #30363d !important;
+}
+
+.toast {
+    position: fixed;
+    bottom: 10px;
+    right: 10px;
+    background: #238636;
+    color: white;
+    padding: 10px 16px;
+    border-radius: 6px;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    font-size: 14px;
+}
+
+.toast.show {
+    opacity: 1;
+}
