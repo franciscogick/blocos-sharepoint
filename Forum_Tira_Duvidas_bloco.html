@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Bloco de Código - SharePoint</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; padding: 1rem; background: #fff; color: #999; }
+.code-block { position: relative; border: 1px solid #30363d; border-radius: 6px; background: #f9f9f9; padding: 28px 12px 12px; overflow: hidden; height: 150px; font-family: "JetBrains Mono", Consolas, monospace; }
+.label { position: absolute; top: 8px; left: 8px; font-size: 10px; text-transform: uppercase; font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif; color: black; font-weight: bold; }
+pre { margin: 0; white-space: pre-wrap; word-break: break-word; }
+button.copy-btn { position: absolute; top: 8px; right: 8px; background: #238636; color: #fff; border: none; border-radius: 4px; padding: 6px 10px; cursor: pointer; font-size: 12px; line-height: 1;  }
+button.copy-btn:hover { background: #2ea043; }
+.copied { background: #30363d !important; }
+</style>
+</head>
+<body>
+<div class="code-block">
+    <div class="label">Fórum Tira-dúvidas</div>
+    <pre id="codigo1" class="language-html">
+&lt;!--Fórum Tira-dúvidas--&gt;
+
+&lt;div style=&quot;background: #fff; border-radius: 12pt; max-width: 560px; width: 100%;&quot;&gt;
+
+   &lt;div id=&quot;col&quot; style=&quot;padding-top: 20pt; padding-right: 20pt; padding-bottom: 20pt;&quot;&gt;&lt;img src=&quot;https://i.ibb.co/5L0h1Tc/logoQP.png&quot; alt=&quot;&quot; /&gt;
+
+   &lt;div class=&quot;spacer&quot; style=&quot;height: 32pt;&quot;&gt;&lt;/div&gt;
+
+   &lt;div id=&quot;titulo&quot;&gt;&lt;img src=&quot;https://i.ibb.co/h8ZN3wJ/perguntas-frequentes.png&quot; alt=&quot;&quot; /&gt;
+
+   &lt;h2 style=&quot;line-height: 1;&quot;&gt;&lt;span style=&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; font-size: 32pt; font-weight: 300; color: #5774cd;&quot;&gt;F&amp;Oacute;RUM&lt;/span&gt;&lt;br /&gt;&lt;span style=&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; font-size: 42pt; font-weight: 800; color: #1b2440;&quot;&gt;TIRA-D&amp;Uacute;VIDAS&lt;/span&gt;&lt;/h2&gt;
+
+   &lt;/div&gt;
+
+   &lt;div class=&quot;spacer&quot; style=&quot;height: 8pt;&quot;&gt;&lt;/div&gt;
+
+   &lt;div id=&quot;content&quot;&gt;
+
+   &lt;p style=&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; font-size: 14pt; font-weight: 300; line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440;&quot;&gt;Aqui voc&amp;ecirc; tem um espa&amp;ccedil;o para tirar d&amp;uacute;vidas e encontrar dicas para a realiza&amp;ccedil;&amp;atilde;o das atividades!&lt;/p&gt;
+
+   &lt;p style=&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; font-size: 14pt; font-weight: 300; line-height: 1.5; max-width: 33em; color: #1b2440;&quot;&gt;Seguimos juntos, conte comigo nessa jornada.&lt;/p&gt;
+
+   &lt;p style=&quot;font-family: &#x27;Open Sans&#x27;, sans-serif; font-size: 14pt; font-weight: 300; line-height: 1.5; max-width: 33em; margin-bottom: 8pt; color: #1b2440;&quot;&gt;Abra&amp;ccedil;o!&lt;/p&gt;
+
+   &lt;/div&gt;
+
+   &lt;div class=&quot;spacer&quot; style=&quot;height: 4pt;&quot;&gt;&lt;/div&gt;
+
+   &lt;!-- FOTOS --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/3kjWFrj/bianca.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/hsjNgNX/chico.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/hK546BQ/dani.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/QFrPm5m/kyn.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/mcvq6Y1/lucas.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/vLtnvtX/rafa.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/RG0pZxQJ/greizi.png&quot; alt=&quot;&quot;&gt; --&gt;
+
+   &lt;!-- &lt;img src=&quot;https://i.ibb.co/CKPrF1G3/tiago.png&quot; alt=&quot;&quot;&gt; --&gt; &amp;nbsp;&lt;/div&gt;
+
+   &lt;/div&gt;
+    </pre>
+    <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
+</div>
+
+<script>
+function copiarTexto() {
+    const texto = document.getElementById("codigo1").innerText;
+    const temp = document.createElement("textarea");
+    temp.value = texto;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+    const btn = document.querySelector(".copy-btn");
+    btn.textContent = "✅ Copiado!";
+    btn.classList.add("copied");
+    setTimeout(() => {
+        btn.textContent = "Copiar";
+        btn.classList.remove("copied");
+    }, 2000);
+}
+</script>
+</body>
+</html>

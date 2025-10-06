@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+<meta charset="UTF-8" />
+<title>Bloco de Código - SharePoint</title>
+<style>
+body { font-family: 'Segoe UI', sans-serif; padding: 1rem; background: #fff; color: #999; }
+.code-block { position: relative; border: 1px solid #30363d; border-radius: 6px; background: #f9f9f9; padding: 28px 12px 12px; overflow: hidden; height: 150px; font-family: "JetBrains Mono", Consolas, monospace; }
+.label { position: absolute; top: 8px; left: 8px; font-size: 10px; text-transform: uppercase; font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif; color: black; font-weight: bold; }
+pre { margin: 0; white-space: pre-wrap; word-break: break-word; }
+button.copy-btn { position: absolute; top: 8px; right: 8px; background: #238636; color: #fff; border: none; border-radius: 4px; padding: 6px 10px; cursor: pointer; font-size: 12px; line-height: 1;  }
+button.copy-btn:hover { background: #2ea043; }
+.copied { background: #30363d !important; }
+</style>
+</head>
+<body>
+<div class="code-block">
+    <div class="label">Cronograma estágio 25/2</div>
+    <pre id="codigo1" class="language-html">
+&lt;!--Cronograma estágio 25/2--&gt;
+
+&lt;p&gt;&lt;strong&gt;Ol&amp;aacute;, queridos estudantes! Tudo bem com vcs?&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;Para acessar o espa&amp;ccedil;o dedicado ao grupo, clique no bot&amp;atilde;o abaixo:&lt;/strong&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;/p&gt;
+
+&lt;p style=&quot;text-align: left;&quot;&gt;&lt;a style=&quot;display: inline-block; padding: 12px 20px; font-size: 20px; background: linear-gradient(35deg, rgba(255,25,144,1) 0%, rgba(255,0,170,1) 52%, rgba(141,28,254,1) 100%); color: #fff; border-radius: 36px; font-weight: bold; text-decoration: none; box-shadow: 0px 4px 12px rgba(0,0,0,.25); margin-left: 10px; margin-bottom: 20px;&quot; href=&quot;https://senac.blackboard.com/webapps/discussionboard/do/message?action=list_messages&amp;amp;course_id=_269671_1&amp;amp;nav=group_forum&amp;amp;group_id=_293913_1&amp;amp;conf_id=_375791_1&amp;amp;forum_id=_873163_1&amp;amp;message_id=_7268429_1&quot;&gt;F&amp;oacute;rum de Mentoria do Grupo 1&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://i.ibb.co/FSwY8J8/Planilha-de-Cronograma-de-Planejamento-de-Evento-Estilo-Tipogr-fico-Minimalista-em-Vermelho-Branco-p.jpg&quot; alt=&quot;Planilha de Cronograma de Planejamento de Evento Estilo Tipogr&amp;aacute;fico Minimalista em Vermelho Branco&quot; class=&quot;img-responsive&quot; width=&quot;612&quot; height=&quot;330&quot; style=&quot;float: left;&quot; /&gt;&lt;/p&gt;
+@recsenacrafa-dotcom
+Comment
+
+    </pre>
+    <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
+</div>
+
+<script>
+function copiarTexto() {
+    const texto = document.getElementById("codigo1").innerText;
+    const temp = document.createElement("textarea");
+    temp.value = texto;
+    document.body.appendChild(temp);
+    temp.select();
+    document.execCommand("copy");
+    document.body.removeChild(temp);
+    const btn = document.querySelector(".copy-btn");
+    btn.textContent = "✅ Copiado!";
+    btn.classList.add("copied");
+    setTimeout(() => {
+        btn.textContent = "Copiar";
+        btn.classList.remove("copied");
+    }, 2000);
+}
+</script>
+</body>
+</html>
