@@ -1,0 +1,289 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8" />
+    <title>Bloco de Código - SharePoint</title>
+    <style>
+        body {
+            background: #fff;
+            color: #999;
+            font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            padding: 1rem;
+            margin: 0;
+        }
+        
+        .code-block {
+            position: relative;
+            border: 1px solid #30363d;
+            border-radius: 6px;
+            background: #f9f9f9;
+            padding: 1rem;
+            overflow: hidden;
+            height: 150px; 
+            font-family: "JetBrains Mono", Consolas, monospace;
+        }
+
+        .label {
+            position: absolute;
+            top: 8px;
+            left: 8px;
+            font-size: 10px;
+            text-transform: uppercase;
+            font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            color: black;
+        }
+        
+        pre {
+            margin: 0;
+            white-space: pre-wrap;
+            word-break: break-word;
+        }
+        
+        button.copy-btn {
+            position: absolute;
+            top: 8px;
+            right: 8px;
+            background: #238636;
+            color: #fff;
+            border: none;
+            border-radius: 4px;
+            padding: 6px 10px;
+            font-family: 'Segoe UI', 'Segoe UI Web (West European)', -apple-system, BlinkMacSystemFont, Roboto, 'Helvetica Neue', sans-serif;
+            font-size: 12px;
+            line-height: 1;
+            cursor: pointer;
+            transition: background 0.2s ease;
+        }
+        
+        button.copy-btn:hover {
+            background: #2ea043;
+        }
+        
+        .copied {
+            background: #30363d !important;
+        }
+        
+        .toast {
+            position: fixed;
+            bottom: 10px;
+            right: 10px;
+            background: #238636;
+            color: white;
+            padding: 10px 16px;
+            border-radius: 6px;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            font-size: 14px;
+        }
+        
+        .toast.show {
+            opacity: 1;
+        }
+    </style>
+
+</head>
+<body>
+    <div class="code-block">
+        <div class="label">Catálogo de projetos</div>
+        <pre id="codigo1" class="language-html">
+            
+&lt;!--Catalogo de projetos--&gt;
+&lt;p&gt;&lt;/p&gt;
+
+&lt;meta charset=&quot;UTF-8&quot; /&gt;&lt;meta name=&quot;viewport&quot; content=&quot;width=device-width, initial-scale=1.0&quot; /&gt;
+
+&lt;div style=&quot;background: transparent; border-radius: 12pt; width: 100%; max-width: 1000px;&quot;&gt;
+
+&lt;div style=&quot;padding: 20pt;&quot;&gt;
+
+&lt;p style=&quot;line-height: 1.35; margin-top: 0; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 10pt; font-weight: 300; line-height: 1.35; margin-top: 0; color: #1b2440;&quot;&gt;Agora que j&amp;aacute; estamos interagindo aqui no F&amp;oacute;rum de Mentoria, voc&amp;ecirc;s devem escolher um dos projetos fict&amp;iacute;cios que apresentaremos aqui. Os projetos j&amp;aacute; est&amp;atilde;o com a &lt;i&gt;Ficha de Pr&amp;eacute;-produ&amp;ccedil;&amp;atilde;o&lt;/i&gt; pronta! Ou seja, todas informa&amp;ccedil;&amp;otilde;es que voc&amp;ecirc;s precisam para come&amp;ccedil;ar o est&amp;aacute;gio j&amp;aacute; est&amp;atilde;o dispon&amp;iacute;veis.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.35; margin-top: 0; color: #1b2440; margin-bottom: 0;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 10pt; font-weight: 300; line-height: 1.35; margin-top: 0; color: #1b2440;&quot;&gt;&amp;Eacute; a partir do projeto escolhido e das informa&amp;ccedil;&amp;otilde;es contidas na sua ficha que o grupo desenvolver&amp;aacute; todas as Atividades Partes aqui mesmo &lt;b&gt;F&amp;oacute;rum de Mentoria&lt;/b&gt;.&lt;/span&gt;&lt;/p&gt;
+
+&lt;div class=&quot;spacer&quot; style=&quot;height: 16pt;&quot;&gt;&lt;/div&gt;
+
+&lt;!-- PROJETOS --&gt;
+
+&lt;h3 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 8pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; margin-top: 0; color: #1b2440; font-size: clamp(14pt, 3vw, 18pt); font-weight: 300;&quot;&gt;Escolham seu projeto!&lt;/span&gt;&lt;/h3&gt;
+
+&lt;div id=&quot;projetos-wrapper&quot; style=&quot;display: flex; flex-direction: row; flex-wrap: wrap; justify-content: flex-start; gap: 1%;&quot;&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 6 --&gt; &lt;img src=&quot;https://i.ibb.co/7nbG4Sf/contacao-Teniagua.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Conta&amp;ccedil;&amp;atilde;o de Hist&amp;oacute;rias sobre a Lenda Ga&amp;uacute;cha da Teiniagu&amp;aacute;&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Patrim&amp;ocirc;nio Cultural Imaterial.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1qGzqo2o7MqdFTJdiILE5ZXHjo0Gse252/view?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto &lt;/a&gt;&lt;span style=&quot;font-size: 13.3333px; text-align: right;&quot;&gt;&amp;nbsp;&lt;/span&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 7 --&gt; &lt;img src=&quot;https://i.ibb.co/2ZXZ848/itibora.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Ibotira: a menina flor&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Literatura - confec&amp;ccedil;&amp;atilde;o e edi&amp;ccedil;&amp;atilde;o do Livro.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/13Q5Uyfiyoe05OwkqNnkL3D1M-sOnfSlA/view?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 8 --&gt; &lt;img src=&quot;https://i.ibb.co/f0frfc1/nefertari.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Nefertari&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de dan&amp;ccedil;a - dan&amp;ccedil;a do ventre.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/10m2suOHEngs668QrRBHo1QN4RCTuJxwE/view?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 1 --&gt; &lt;img src=&quot;https://i.ibb.co/2ccNjgh/algo.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Algo que me caiba&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Artes C&amp;ecirc;nicas - Teatro.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1pGdtcObDf920UWR04mwR9rGQN3tVN7Aj/view?usp=sharing&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; align-items: center; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 4 --&gt; &lt;img src=&quot;https://i.ibb.co/71fsQGt/frevo.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Fervo, Frevo!&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Dan&amp;ccedil;a - espet&amp;aacute;culo de dan&amp;ccedil;as populares.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/10BH_MwVvwhtbTShfjMHJneNIBBZVHcrP/view?usp=sharing&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 2 --&gt; &lt;img src=&quot;https://i.ibb.co/VSRJLNm/espuma.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Grava&amp;ccedil;&amp;atilde;o do single Espuma da banda Miraflores&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de M&amp;uacute;sica - Grava&amp;ccedil;&amp;atilde;o e lan&amp;ccedil;amento de &amp;aacute;lbum/single.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1t7kqClPZ9Z6TBPF8d-1yY3ABGDl9Lq1y/view?usp=sharing&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; align-items: center; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 3 --&gt; &lt;img src=&quot;https://i.ibb.co/M5J7XMq/reisado.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Exposi&amp;ccedil;&amp;atilde;o de Genilson Barcelos na galeria Elefante&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Artes Visuais - Galeria.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1Y5L6gZkKzP5Y2W1BY5oeI7Ban8AVFLUk/view?usp=sharing&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; align-items: center; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;flex-grow: 1; width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 10pt; background: rgba(207,207,207,.25);&quot;&gt;&lt;!-- quadro projeto 5 --&gt; &lt;img src=&quot;https://i.ibb.co/YRLxCT3/roda.jpg&quot; alt=&quot;&quot; style=&quot;width: 100%; border-radius: 8pt 8pt 0 0; display: block;&quot; /&gt;
+
+&lt;div style=&quot;padding: 10pt; background: #fafafa; border-radius: 0 0 12pt 12pt;&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 4pt; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; color: #1b2440; font-size: 16pt; font-weight: 800;&quot;&gt;Roda, um Document&amp;aacute;rio sobre o jongo&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 12pt; font-weight: 300; line-height: 1.5; margin-top: 0; color: #1b2440;&quot;&gt;Projeto de Audiovisual - Document&amp;aacute;rio.&lt;/span&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;/p&gt;
+
+&lt;p style=&quot;line-height: 1.5; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 10pt;&quot;&gt;&lt;a href=&quot;https://drive.google.com/file/d/1Sqh1aasm4LqI_nJ-6Xb8MlqgogK4yeEc/view?usp=sharing&quot; target=&quot;_blank&quot; rel=&quot;noopener&quot; style=&quot;background: #5774CD; border-radius: 32px; font-style: normal; font-weight: 600; font-family: 'Open Sans', sans-serif; font-size: 10pt; line-height: 1; color: #ffffff; display: inline-block; padding: 8pt 12pt; text-decoration: none;&quot;&gt;&lt;img src=&quot;https://i.ibb.co/HNkhbs1/arrow-right-circle-white.png&quot; alt=&quot;-&amp;gt;&quot; border=&quot;0&quot; style=&quot;display: inline-block; vertical-align: text-top; width: 12pt; margin-right: 4pt;&quot; /&gt;saiba mais sobre este projeto&lt;/a&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div style=&quot;width: 32%; min-width: 300px; border-radius: 10pt; overflow: hidden; margin-bottom: 0; background: transparent;&quot;&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+&lt;div class=&quot;spacer&quot; style=&quot;height: 10pt;&quot;&gt;&lt;/div&gt;
+
+&lt;div style=&quot;padding: 10pt; border-radius: 16px; background: rgba(255,200,73,.2);&quot;&gt;
+
+&lt;h4 style=&quot;line-height: 1.2; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 6pt;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; line-height: 1.2; margin-top: 0; color: #1b2440; font-size: clamp(14pt, 1vw, 20pt); font-weight: bold;&quot;&gt;Projeto escolhido?&lt;/span&gt;&lt;/h4&gt;
+
+&lt;p style=&quot;line-height: 1.35; max-width: 33em; margin-top: 0; color: #1b2440; margin-bottom: 0;&quot;&gt;&lt;span style=&quot;font-family: 'Open Sans', sans-serif; font-size: 10pt; font-weight: 300; line-height: 1.35; margin-top: 0; color: #1b2440;&quot;&gt;Ent&amp;atilde;o, informe sua escolha aqui no f&amp;oacute;rum e bora come&amp;ccedil;ar o trabalho!&lt;/span&gt;&lt;/p&gt;
+
+&lt;/div&gt;
+
+&lt;!-- imagem --&gt; &lt;!-- &lt;div class=&quot;spacer&quot; style=&quot;height: 16pt;&quot;&gt;&lt;/div&gt; --&gt; &lt;!-- FOTOS --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/3kjWFrj/bianca.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/hsjNgNX/chico.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/hK546BQ/dani.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/QFrPm5m/kyn.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/mcvq6Y1/lucas.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/vLtnvtX/rafa.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/RG0pZxQJ/greizi.png&quot; alt=&quot;&quot;&gt; --&gt; &lt;!-- &lt;img src=&quot;https://i.ibb.co/CKPrF1G3/tiago.png&quot; alt=&quot;&quot;&gt; --&gt;&lt;/div&gt;
+
+&lt;/div&gt;
+
+            
+            
+        </pre>
+        <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
+    </div>
+    
+    <!--<div id="toast" class="toast">Copiado!</div>-->
+   
+   
+    <script>
+        function copiarTexto() {
+            const texto = document.getElementById("codigo1").innerText;
+            const temp = document.createElement("textarea");
+            temp.value = texto;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand("copy");
+            document.body.removeChild(temp);
+            
+            const btn = document.querySelector(".copy-btn");
+            //const toast = document.getElementById("toast");
+            
+            btn.textContent = "✅ Copiado!";
+            btn.classList.add("copied");
+            //toast.classList.add("show");
+            
+            setTimeout(() => {
+                btn.textContent = "Copiar";
+                btn.classList.remove("copied");
+                //toast.classList.remove("show");
+            }, 2000);
+        }
+    </script>
+</body>
+</html>
