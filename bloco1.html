@@ -112,7 +112,7 @@
     <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
   </div>
 
-  <div id="toast" class="toast">Copiado!</div>
+  <!--<div id="toast" class="toast">Copiado!</div>-->
 
   <script>
     function copiarTexto() {
@@ -125,16 +125,16 @@
       document.body.removeChild(temp);
 
       const btn = document.querySelector(".copy-btn");
-      const toast = document.getElementById("toast");
+      //const toast = document.getElementById("toast");
 
       btn.textContent = "✅ Copiado!";
       btn.classList.add("copied");
-      toast.classList.add("show");
+      //toast.classList.add("show");
 
       setTimeout(() => {
         btn.textContent = "Copiar";
         btn.classList.remove("copied");
-        toast.classList.remove("show");
+        //toast.classList.remove("show");
       }, 2000);
     }
   </script>
