@@ -4,32 +4,101 @@
   <meta charset="UTF-8" />
   <title>Bloco de Código - SharePoint</title>
   <style>
-    body { font-family: monospace; margin: 0; padding: 1em; background: #f6f8fa; }
-    pre {
-      background: #f6f8fa;
-      padding: 1em;
-      border-radius: 6px;
-      overflow-x: auto;
-      border: 1px solid #ddd;
+    body {
+      background: #0d1117;
+      color: #c9d1d9;
+      font-family: "JetBrains Mono", Consolas, monospace;
+      padding: 1rem;
+      margin: 0;
     }
-    button {
+
+    .code-block {
+      position: relative;
+      border: 1px solid #30363d;
+      border-radius: 6px;
+      background: #161b22;
+      padding: 1rem;
+      overflow-x: auto;
+    }
+
+    pre {
+      margin: 0;
+      white-space: pre-wrap;
+      word-break: break-word;
+    }
+
+    button.copy-btn {
       position: absolute;
-      top: 10px;
-      right: 10px;
-      background: #0366d6;
+      top: 8px;
+      right: 8px;
+      background: #238636;
       color: #fff;
       border: none;
       border-radius: 4px;
       padding: 6px 10px;
+      font-size: 12px;
       cursor: pointer;
+      transition: background 0.2s ease;
     }
-    button:hover { background: #024c9a; }
+
+    button.copy-btn:hover {
+      background: #2ea043;
+    }
+
+    .copied {
+      background: #30363d !important;
+    }
+
+    .toast {
+      position: fixed;
+      bottom: 10px;
+      right: 10px;
+      background: #238636;
+      color: white;
+      padding: 10px 16px;
+      border-radius: 6px;
+      opacity: 0;
+      transition: opacity 0.3s ease;
+      font-size: 14px;
+    }
+
+    .toast.show {
+      opacity: 1;
+    }
   </style>
 </head>
 <body>
-  <div style="position:relative;">
-    <pre id="codigo1">&lt;h1&gt;Olá, mundo!&lt;/h1&gt;</pre>
-    <button onclick="navigator.clipboard.writeText('<h1>Olá, mundo!</h1>')">Copiar</button>
+  <div class="code-block">
+    <pre id="codigo1">&lt;h1&gt;Olá, mundo!&lt;/h1&gt;
+&lt;p&gt;Este é um exemplo de bloco com botão de copiar.&lt;/p&gt;</pre>
+    <button class="copy-btn" onclick="copiarTexto()">Copiar</button>
   </div>
+
+  <div id="toast" class="toast">Copiado!</div>
+
+  <script>
+    function copiarTexto() {
+      const texto = document.getElementById("codigo1").innerText;
+      const temp = document.createElement("textarea");
+      temp.value = texto;
+      document.body.appendChild(temp);
+      temp.select();
+      document.execCommand("copy");
+      document.body.removeChild(temp);
+
+      const btn = document.querySelector(".copy-btn");
+      const toast = document.getElementById("toast");
+
+      btn.textContent = "✅ Copiado!";
+      btn.classList.add("copied");
+      toast.classList.add("show");
+
+      setTimeout(() => {
+        btn.textContent = "Copiar";
+        btn.classList.remove("copied");
+        toast.classList.remove("show");
+      }, 2000);
+    }
+  </script>
 </body>
 </html>
